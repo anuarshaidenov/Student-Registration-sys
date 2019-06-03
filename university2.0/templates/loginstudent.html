@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    log in
+{% endblock %}
+
+{% block main %}
+    <form action="/loginstudent" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="ID" placeholder="ID" type="text"/>
+        </div>
+        <a class="btn btn-primary" href="/student" role="button">log in</a>
+    </form>
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    admin
+{% endblock %}
+
+{% block main %}
+    <form action="/admin" method="post">
+        <p class="font-weight-bold">STUDENTS REGISTERED</p>
+        <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>name</th>
+                <th>Department</th>
+                <th>GPA</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for position1 in positions1 %}
+                <tr>
+                    <td>{{position1.ID}}</td>
+                    <td>{{position1.name}}</td>
+                    <td>{{position1.Dept_name}}</td>
+                    <td>{{position1.Total_crd}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+     </table>
+     <p class="font-weight-bold">INSTRUCTORS REGISTERED</p>
+     <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>name</th>
+                <th>Department</th>
+                <th>salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for position2 in positions2 %}
+                <tr>
+                    <td>{{position2.ID}}</td>
+                    <td>{{position2.name}}</td>
+                    <td>{{position2.dept_name}}</td>
+                    <td>{{position2.salary}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+     </table>
+     <p class="font-weight-bold">COURSES AVALIABLE</p>
+     <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>COURSE ID</th>
+                <th>title</th>
+                <th>Department</th>
+                <th>credits</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for position3 in positions3 %}
+                <tr>
+                    <td>{{position3.course_id}}</td>
+                    <td>{{position3.title}}</td>
+                    <td>{{position3.dept_name}}</td>
+                    <td>{{position3.credits}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+     </table>
+
+    </form>
+{% endblock %}

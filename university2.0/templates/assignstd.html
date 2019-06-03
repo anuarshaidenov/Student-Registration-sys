@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    assign student to a course
+{% endblock %}
+
+{% block main %}
+    <form action="/assignstd" method="post">
+        <p class="font-weight-bold">STUDENT ID:</p>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="ID" placeholder="ID" type="text"/>
+        </div>
+        <p class="font-weight-bold">Which course you want the student to be assigned to:</p>
+            <select class="custom-select" id="inputGroupSelect01" name = "course_id">
+                <option selected>Choose...</option>
+                {% for position in positions %}
+                <option>{{position.course_id}}</option>
+                {% endfor %}
+            </select>
+        <p class="font-weight-bold">Which semester the student takes course in:</p>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="semester" placeholder="SEMESTER" type="text"/>
+        </div>
+        <p class="font-weight-bold">Which year the student takes course in:</p>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="year" placeholder="YEAR" type="text"/>
+        </div>
+        <p class="font-weight-bold">Which grade the student got:</p>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="grade" placeholder="GRADE" type="text"/>
+        </div>
+        <button class="btn btn-primary" type="submit">register</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    student
+{% endblock %}
+
+{% block main %}
+    <form action="/instructorstudent" method="post">
+        <p class="font-weight-bold">INFORMATION ABOUT THE STUDENTS REGISTERED TO THE COURSES</p>
+        <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>name</th>
+                <th>Department</th>
+                <th>GPA</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for position in positions %}
+                <tr>
+                    <td>{{position.ID}}</td>
+                    <td>{{position.name}}</td>
+                    <td>{{position.Dept_name}}</td>
+                    <td>{{position.Total_crd}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </form>
+{% endblock %}

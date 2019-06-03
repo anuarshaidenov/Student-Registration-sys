@@ -1,0 +1,33 @@
+{% extends "student.html" %}
+
+{% block title %}
+    courses
+{% endblock %}
+
+{% block main %}
+    <form action="/studentcourses" method="post">
+        <p class="font-weight-bold">COURSES THE STUDENT REGISTERED ON</p>
+        <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>COURSE</th>
+                <th>SEMESTER</th>
+                <th>YEAR</th>
+                <th>GRADE</th>
+            </tr>
+        </thead>
+        <tbody>
+                {% for position in positions %}
+                <tr>
+                        <td>{{position.course_id}}</td>
+                        <td>{{position.semester}}</td>
+                        <td>{{position.year}}</td>
+                        <td>{{position.grade}}</td>
+                </tr>
+                {% endfor %}
+        </tbody>
+    </table>
+    <p class="font-weight-bold"><a href="/coursesinfo">COURSES</a> IN DETAILS</p>
+
+    </form>
+{% endblock %}

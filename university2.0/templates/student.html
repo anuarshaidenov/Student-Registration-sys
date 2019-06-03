@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    student
+{% endblock %}
+
+{% block main %}
+    <form action="/student" method="post">
+        <p class="font-weight-bold">{{name}} INFORMATION</p>
+        <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>name</th>
+                <th>Department</th>
+                <th>GPA</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td>{{ID}}</td>
+                    <td>{{name}}</td>
+                    <td>{{Dept_name}}</td>
+                    <td>{{Total_crd}}</td>
+                </tr>
+        </tbody>
+    </table>
+    </form>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    main
+{% endblock %}
+
+{% block main %}
+    <form action="/" method = "post">
+        {% if session.user_id %}
+            <p class="font-weight-bold">WELCOME to the University database web-app!</p>
+        {% else %}
+            <p class="font-weight-bold">WELCOME to the University database web-app!</p>
+            <p class="text-center">you can login as an admin, instructor or student</p>
+            <a href="/login" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">LOG IN</a><!-- button -->
+
+        {% endif %}
+    </form>
+{% endblock %}

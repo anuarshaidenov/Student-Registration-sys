@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    add a teacher
+{% endblock %}
+
+{% block main %}
+    <form action="/newteacher" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="ID" placeholder="ID" type="text"/>
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="name" placeholder="name" type="text"/>
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="dept_name" placeholder="department" type="text"/>
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="salary" placeholder="salary" type="text"/>
+        </div>
+        <button class="btn btn-primary" type="submit">register</button>
+    </form>
+{% endblock %}

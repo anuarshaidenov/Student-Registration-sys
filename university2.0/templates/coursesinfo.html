@@ -1,0 +1,30 @@
+{% extends "studentcourses.html" %}
+
+{% block title %}
+    courses info
+{% endblock %}
+
+{% block main %}
+    <form action="/coursesinfo" method="post">
+        <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>COURSE</th>
+                <th>TITLE</th>
+                <th>Department</th>
+                <th>CREDITS</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for position in positions %}
+                <tr>
+                    <td>{{position.course_id}}</td>
+                    <td>{{position.title}}</td>
+                    <td>{{position.dept_name}}</td>
+                    <td>{{position.credits}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </form>
+{% endblock %}

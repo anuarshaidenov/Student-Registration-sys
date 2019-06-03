@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    add a course
+{% endblock %}
+
+{% block main %}
+    <form action="/newcourse" method="post">
+        <p class="font-weight-bold">COURSE ID:</p>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="course_id" placeholder="course_id" type="text"/>
+        </div>
+        <p class="font-weight-bold">TITLE:</p>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="title" placeholder="title" type="text"/>
+        </div>
+        <p class="font-weight-bold">DEPARTMENT:</p>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="dept_name" placeholder="dept_name" type="text"/>
+        </div>
+        <p class="font-weight-bold">CREDITS:</p>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="credits" placeholder="credits" type="text"/>
+        </div>
+        <button class="btn btn-primary" type="submit">register</button>
+    </form>
+{% endblock %}

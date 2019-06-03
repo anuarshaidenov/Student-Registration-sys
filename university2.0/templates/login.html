@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    log in
+{% endblock %}
+
+{% block main %}
+    <form action="/login" method="post">
+        <a class="btn btn-primary" href="/loginadmin" role="button">admin</a>
+        <a class="btn btn-primary" href="/loginstudent" role="button">student</a>
+        <a class="btn btn-primary" href="/logininstructor" role="button">instructor</a>
+    </form>
+{% endblock %}

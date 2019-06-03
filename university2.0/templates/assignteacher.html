@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    assign teacher to a course
+{% endblock %}
+
+{% block main %}
+    <form action="/assignteacher" method="post">
+        <p class="font-weight-bold">INSTRUCTOR ID:</p>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="ID" placeholder="ID" type="text"/>
+        </div>
+        <p class="font-weight-bold">Which course to be taught:</p>
+            <select class="custom-select" id="inputGroupSelect01" name = "course_id">
+                <option selected>Choose...</option>
+                {% for position in positions %}
+                <option>{{position.course_id}}</option>
+                {% endfor %}
+            </select>
+        <p class="font-weight-bold">Which semester the course will be taught in:</p>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="semester" placeholder="SEMESTER" type="text"/>
+        </div>
+        <p class="font-weight-bold">Which year the course will be taught:</p>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="year" placeholder="YEAR" type="text"/>
+        </div>
+        <button class="btn btn-primary" type="submit">register</button>
+    </form>
+{% endblock %}

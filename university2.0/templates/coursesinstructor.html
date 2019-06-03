@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    courses
+{% endblock %}
+
+{% block main %}
+    <form action="/coursesinstructor" method="post">
+        <p class="font-weight-bold">STUDENTS REGISTERED TO THE COURSES</p>
+        <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>STUDENT ID</th>
+                <th>COURSE</th>
+            </tr>
+        </thead>
+        <tbody>
+                {% for position in positions %}
+                <tr>
+                        <td>{{position.ID}}</td>
+                        <td>{{position.course_id}}</td>
+                </tr>
+                {% endfor %}
+        </tbody>
+    </table>
+    </form>
+{% endblock %}
