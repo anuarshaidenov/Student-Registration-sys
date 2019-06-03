@@ -33,6 +33,7 @@ db = SQL("sqlite:///University.db")
 def index():
     return render_template("index.html")
 
+#assign courses to instructor
 @app.route("/assignteacher", methods=["GET", "POST"])
 @login_required
 def assignteacher():
@@ -43,7 +44,7 @@ def assignteacher():
         if not request.form.get("ID"):
             return apology("must provide id")
 
-        #ensure name was submitted
+        #ensure data was submitted
         elif not request.form.get("course_id"):
             return apology("must provide course id")
 
